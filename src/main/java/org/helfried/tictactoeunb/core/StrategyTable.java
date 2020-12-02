@@ -72,12 +72,12 @@ public class StrategyTable {
     static int[][][] oStrategyBoards = {oDepth0, oDepth1, oDepth2, oDepth3};
     static int[][][][] strategy = {xStrategyBoards, oStrategyBoards};
 
-    public static int[] getStrategyBoard(int id, int depthIndex, int boardIndex) {
-        return strategy[getPlayerAI(id) - 1][depthIndex][boardIndex];
+    public static int[] getStrategyBoard(int gameID, int depthIndex, int boardIndex) {
+        return strategy[getPlayerAI(gameID) - 1][depthIndex][boardIndex];
     }
 
-    public static void setStrategyBoard(int id, int[] strategyBoard, int depthIndex, int boardIndex) {
-        strategy[getPlayerAI(id) - 1][depthIndex][boardIndex] = deepCopyBoard(strategyBoard);
+    public static void setStrategyBoard(int gameID, int[] strategyBoard, int depthIndex, int boardIndex) {
+        strategy[getPlayerAI(gameID) - 1][depthIndex][boardIndex] = deepCopyBoard(strategyBoard);
     }
 
     public static int[] deepCopyBoard(int[] board) {
@@ -86,8 +86,8 @@ public class StrategyTable {
         return newBoard;
     }
 
-    public static int getBoardIterations(int id, int depthIndex) {
-        return strategy[getPlayerAI(id) - 1][depthIndex].length;
+    public static int getBoardIterations(int gameID, int depthIndex) {
+        return strategy[getPlayerAI(gameID) - 1][depthIndex].length;
     }
 
     private StrategyTable() {
