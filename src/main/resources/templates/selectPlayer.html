@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome To TicTacToe</title>
+    <style>
+        input {
+            background: transparent;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            font-size: 40px;
+            text-align: center;
+            border: transparent;
+            font-weight: bold;
+        }
+        input:hover {
+            background: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+<div align="center" style="padding-top: 50px">
+<h1 style="font-family: Bahnschrift">Please select a player</h1>
+    <table align="center" style="text-align:center;">
+        <tr>
+            <form method="post" th:action="${gameID} + ${'/1'}">
+                <td>
+                    <input type="submit" th:value="${'X'}">
+                </td>
+            </form>
+            <form method="post" th:action="${gameID} + ${'/2'}">
+                <td>
+                    <input type="submit" th:value="${'O'}">
+                </td>
+            </form>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TicTacToe</title>
+    <style>
+        td {
+            width: 80px;
+            height: 80px;
+            border: solid 2px;
+        }
+
+        input {
+            background: transparent;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            font-size: 40px;
+            text-align: center;
+            border: transparent;
+            font-weight: bold;
+        }
+        input:hover {
+            background: #4CAF50;
+        }
+        .reset {
+            width: 100px;
+            height: 60px;
+            cursor: pointer;
+            font-size: 30px;
+            text-align: center;
+            border: transparent;
+            font-weight: bold;
+            background: steelblue;
+            font-family: Bahnschrift;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+<table align="center" style="border-collapse: collapse; text-align:center; margin-top: 50px">
+    <tr>
+        <form method="post" action="tictactoe/0">
+            <td style="border-left: transparent; border-top: transparent;">
+                <input type="submit" th:value="${field0 == null} ? ${'&nbsp;'} : ${field0}">
+            </td>
+        </form>
+        <form method="post" action="tictactoe/1">
+            <td style="border-top: transparent;">
+                <input type="submit" th:value="${field1 == null} ? ${'&nbsp;'} : ${field1}">
+            </td>
+        </form>
+        <form method="post" action="tictactoe/2">
+            <td style="border-right: transparent; border-top: transparent;">
+                <input type="submit" th:value="${field2 == null} ? ${'&nbsp;'} : ${field2}">
+            </td>
+        </form>
+    </tr>
+    <tr>
+        <form method="post" action="tictactoe/3">
+            <td style="border-left: transparent;">
+                <input type="submit" th:value="${field3 == null} ? ${'&nbsp;'} : ${field3}">
+            </td>
+        </form>
+        <form method="post" action="tictactoe/4">
+            <td>
+                <input type="submit" th:value="${field4 == null} ? ${'&nbsp;'} : ${field4}">
+            </td>
+        </form>
+        <form method="post" action="tictactoe/5">
+            <td style="border-right: transparent;">
+                <input type="submit" th:value="${field5 == null} ? ${'&nbsp;'} : ${field5}">
+            </td>
+        </form>
+    </tr>
+    <tr>
+        <form method="post" action="tictactoe/6">
+            <td style="border-left: transparent; border-bottom: transparent">
+                <input type="submit" th:value="${field6 == null} ? ${'&nbsp;'} : ${field6}">
+            </td>
+        </form>
+        <form method="post" action="tictactoe/7">
+            <td style="border-bottom: transparent">
+                <input type="submit" th:value="${field7 == null} ? ${'&nbsp;'} : ${field7}">
+            </td>
+        </form>
+        <form method="post" action="tictactoe/8">
+            <td style="border-right: transparent; border-bottom: transparent">
+                <input type="submit" th:value="${field8 == null} ? ${'&nbsp;'} : ${field8}">
+            </td>
+        </form>
+    </tr>
+</table>
+<form style="text-align: center; padding-top: 50px;" method="get" th:action="${gameID}"><input type="submit" th:value="${'Reset'}" class="reset"></form>
+<h1 style="text-align: center; font-family: Bahnschrift;" th:text="${gameEnded == null} ? ${null} : ${gameEnded}"></h1>
+</body>
+
+</html>
